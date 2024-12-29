@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Object-Destination Picker</title>
+</head>
+<body>
+  <h1>Random Object-Destination Picker</h1>
+  <button id="generateButton">Generate Pair</button>
+  <p id="result">Click the button to get a random pair!</p>
+
+  <script>
+    // Array of objects
+    const objects = ["Red Box", "Blue Box", "Green Ball", "Yellow Bag", "Orange Book"];
+
+    // Array of destinations
+    const destinations = ["Kitchen", "Bedroom", "Bathroom", "Living Room", "Garage"];
+
+    // Function to get a random item from an array
+    function getRandomItem(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    // Function to generate a random pair
+    function generatePair() {
+      const randomObject = getRandomItem(objects);
+      const randomDestination = getRandomItem(destinations);
+      document.getElementById("result").innerText = `Take the ${randomObject} to the ${randomDestination}.`;
+    }
+
+    // Attach event listener to the button
+    document.getElementById("generateButton").addEventListener("click", generatePair);
+  </script>
+</body>
+</html>
